@@ -1,0 +1,29 @@
+<img src="../../assets/sig-back.jpg" height="625px" width="100%">
+<div class="conatiner">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Log-In</h1>
+                    <h5>Feel Free to login</h5><hr> 
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" formControlName="email" placeholder="Enter Correct Email Id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                      <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">Please Enter Correct Email-id</span>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" formControlName="psw" class="form-control" placeholder="Enter Correct Password" id="exampleInputPassword1" minlength="5">
+                      <span class="text-danger" *ngIf="loginForm.controls['psw'].dirty && loginForm.hasError('required','psw')">Please Enter Correct Password</span>
+                    </div>
+                    <button type="submit"[disabled]="!loginForm.valid" class="btn btn-primary">Log-in</button>
+                  </form> 
+                  <a routerLink="/sign-up">New user click here to sign-up</a>
+                  <a routerLink="/forgot-password">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+</div>

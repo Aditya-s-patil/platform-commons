@@ -1,0 +1,63 @@
+  <img src="../../assets/sig-back.jpg" height="625px" width="100%">
+  <div class="conatiner">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="text-center">
+            <h1>Sign-up</h1>
+            <hr>
+          </div>
+          <form [formGroup]="signupForm" (ngSubmit)="signup()">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Full-Name</label>
+              <input type="text" formControlName="name" class="form-control" placeholder="Aditya S Patil" id="Name"
+                aria-describedby="emailHelp" minlength="2" required>
+              <span class="text-danger"
+                *ngIf="signupForm.controls['name'].dirty && signupForm.hasError('required','name')">Please Enter Your
+                Full Name</span>
+              <span class="text-danger" *ngIf="signupForm.hasError('minlength','name')">Please Enter Your Full
+                Name</span>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Mobile-Number</label>
+              <input type="number" formControlName="mobile" class="form-control" placeholder="9998888333" id="Mobile"
+                aria-describedby="emailHelp" minlength="10" maxlength="10" min="5999999999" max="9999999999" required>
+              <span class="text-danger"
+                *ngIf="signupForm.controls['mobile'].dirty && signupForm.hasError('required','mobile')">Please Enter
+                Correct Mobile Number</span>
+              <span class="text-danger" *ngIf="signupForm.hasError('minlength','mobile')">Please Enter Your Full
+                Name</span>
+              <span class="text-danger" *ngIf="signupForm.hasError('maxlength','mobile')">Please Enter Your Full
+                Name</span>
+              <span class="text-danger" *ngIf="signupForm.hasError('min','mobile')">Please Enter Your Full Name</span>
+              <span class="text-danger" *ngIf="signupForm.hasError('max','mobile')">Please Enter Your Full Name</span>
+              <div id="emailHelp" class="form-text">We'll never share your Mobile Number with anyone else.</div>
+
+
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" formControlName="email" class="form-control" placeholder="abc@email.com"
+                id="exampleInputEmail1" aria-describedby="emailHelp" required>
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              <span class="text-danger"
+                *ngIf="signupForm.controls['email'].dirty &&signupForm.hasError('required','email')">Please Enter
+                Correct Email-id</span>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" formControlName="psw" class="form-control" id="exampleInputPassword1" minlength="5"
+                required>
+              <span class="text-danger"
+                *ngIf="signupForm.controls['psw'].dirty && signupForm.hasError('required','psw')">Please Enter Min 5
+                character Password</span>
+              <span class="text-danger" *ngIf="signupForm.hasError('minlength','psw')">Please Enter Min 5 character
+                Password</span>
+            </div>
+            <button type="submit"  class="btn btn-primary">Sign-up</button>
+          </form>
+          <a routerLink="/log-in">Registered user click here to Log-in</a>
+        </div>
+      </div>
+    </div>
+  </div>

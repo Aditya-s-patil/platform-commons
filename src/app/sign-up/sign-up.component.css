@@ -1,0 +1,14 @@
+.card{
+    margin-top:2px;
+    border: 1px solid blue;
+    width: 56%;
+    padding: 15px;
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    
+    background-color: white;
+}
+.backg{
+    background-color: black;
+}
