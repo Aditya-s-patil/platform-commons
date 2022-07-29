@@ -19,7 +19,7 @@ export class LogInComponent implements OnInit {
     })
   }
   login(){
-    this._http.get<any>("http://localhost:3000/sign_up").subscribe(res=>{
+    this._http.get<any>("https://my-json-server.typicode.com/Aditya-s-patil/json/db.json/sign_up").subscribe(res=>{
       const user =res.find((a:any)=>{
         return a.email===this.loginForm.value.email && a.psw===this.loginForm.value.psw
       })
