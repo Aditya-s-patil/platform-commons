@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
     });
   }
   signup(){
-    this._http.post<any>("https://my-json-server.typicode.com/Aditya-s-patil/json/db.json",this.signupForm.value).subscribe(res=>{
+    this._http.post<any>("https://my-json-server.typicode.com/Aditya-s-patil/json/db.json/sign-in",this.signupForm.value).subscribe(res=>{
       alert("Registered Successfully");
       this.signupForm.reset();
       this.router.navigate(['log-in'])
